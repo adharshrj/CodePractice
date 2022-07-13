@@ -12,7 +12,7 @@ class AddNumbers:
         res = ListNode()
         temp = res
         carry = 0
-        while (l1 or l2 or carry == 1):
+        while (l1 or l2 or carry):
             total = 0
             if l1:
                 total += l1.val
@@ -24,8 +24,8 @@ class AddNumbers:
             
             total += carry
             carry = total // 10
-            node = ListNode(math.floor(total % 10))
-            temp.next = node
+            temp.next = ListNode(total % 10)
             temp = temp.next
         
         return res.next
+    
