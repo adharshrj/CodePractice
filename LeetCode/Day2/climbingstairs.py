@@ -23,3 +23,13 @@ def climbingstairsmath(num):
         num -= 1
 
     return res
+
+def climbingstairsop(n):
+    if n <= 3: return n
+    n1, n2 = 2, 3
+
+    for i in range(4, n+1):
+        res = n1 + n2
+        n1 = n2
+        n2 = res
+    return n2
